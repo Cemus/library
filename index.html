@@ -4,11 +4,73 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
-    <title>Library</title>
+    <title>Backlog</title>
 </head>
 <body>
-    
+    <div class="container">
+        <div class="logo-container">
+            <img class="logo" src="img/logo.png" alt="logo">
+        </div>
+        <header>
+            <h1>Assists you to complete your games!</h1>
+        </header>
+        <div class="left-panel">
+            <button id="all-games" class="left-button selected">All games</button>
+            <button id="unplayed-games" class="left-button">Unplayed games</button>
+            <button id="played-games" class="left-button">Played games</button>
+            <button id="completed-games" class="left-button">Completed games</button>
+        </div>
+
+        <div id="pop-up" class="pop-up">
+            <div class="form-container">
+                <button id="cancel">X</button>
+                <form id="form" action="#">
+                    <div class="form-title">
+                        <label for="title">What is the game's name ?</label>
+                        <input type="text" id="title" name="title" maxlength="15" placeholder="Dark Souls, The Sims 4..." required>
+                    </div>
+
+                    <div class="form-genre">
+                        <label for="genre">What is the game's genre ?</label>
+                        <select name="genre" id="genre" required value= "";>
+                            <option value=""></option>
+                            <option value="shooter">Shooter</option>
+                            <option value="platform">Platform</option>
+                            <option value="rpg">Role-playing</option>
+                            <option value="sport">Sport</option>
+                            <option value="rhythm">Rhythm</option>
+                            <option value="casual">Casual</option>
+                            <option value="strategy">Strategy</option>
+                            <option value="puzzle">Puzzle</option>
+                            <option value="stealth">Stealth</option>
+                            <option value="horror">Horror</option>
+                        </select>
+                    </div>
+
+                    <div class="form-hours">
+                        <label for="hours">How many hours did you played the game ?</label>
+                        <input type="number" min="0" id="hours" name="hours" value="0" required>
+                    </div>
+                
+                    <div class="form-completed">
+                        <label for="completed">Did you manage to complete the game ?</label>
+                        <button class="button-completed unplayed" id="completed" type="button" value ="Unplayed"></button>
+                    </div>
+
+                    <button id="submit" type="submit" form="form">Add</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="library">
+            <button id="create-game" class="create-button">Add a new game to your library</button>
+        </div>
+    </div>
+
 </body>
 </html>

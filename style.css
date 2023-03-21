@@ -1,0 +1,256 @@
+
+:root{
+    --white: #FFFFFF;
+    --black: #000000;
+    --color1: #6E19D6;
+    --color2: #9F5C4F;
+    --color3: #573933;
+    --excellent: #41BE65;
+    --good: #6541BE;
+    --bad: #BE6541;
+}
+
+*{
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+}
+
+.container{
+    display: grid;
+    grid-template-areas: "logo header"
+                        "left body";
+    grid-template-rows: 1fr 8fr;
+    grid-template-columns: 1fr 4fr;
+    background-color: var(--white);
+    justify-items: center;
+    margin: 0;
+    border: 0;
+    height: 100vh;
+}
+
+
+
+header{
+    display: flex;
+    grid-area: header;
+    background-color: var(--black);
+    height: 20vh;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.logo-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-area: logo;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+}
+
+.logo{
+    height: 100%;
+    background-color: #000000;
+    image-rendering: pixelated;
+}
+
+.left-panel{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr;   
+    grid-area: left;
+    background-color: var(--black);
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-items: center;
+}
+
+.left-button{
+    height: 25%;
+    width: 15vw;
+    border-radius: 1rem;
+    border: none;
+}
+
+.selected {
+    height: 30%; 
+    width: 16vw;
+    color: white;
+    background-color: #41BE65;
+}
+
+h1{
+    display: inline;
+    color: var(--white);
+}
+
+#library{ 
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    grid-area: body;
+    background-color: var(--black);   
+    height: 100%;
+    width: 100%;
+}
+
+.create-button{
+    height: 20vh;
+    width: 10vw;
+    border-radius: 1rem;
+    border: none;
+    margin: 2rem;
+}
+
+button{
+    cursor: pointer;
+}
+
+.pop-up{
+    display: flex;
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    color: black;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.493);
+}
+
+.form-container{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    min-height: max-content;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 1.5rem;
+}
+
+#cancel{
+    align-self: flex-end;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; 
+    padding: 2rem;
+}
+
+form > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;  
+    padding: 1rem;
+    text-align: center;
+}
+
+input{
+    text-align: center;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    margin-left: 0.5rem;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.button-completed, .button-completed-games{
+    letter-spacing: 0.5rem;
+    background-color: var(--bad);
+    color: white;
+    font-weight: bold;
+    border-radius: 0.5rem;
+    border: none;
+    padding: 0.4rem;
+}
+
+.button-completed-games{
+    position: relative;
+    right: 7.5rem;
+    transform: rotate(0.25turn);
+}
+
+.unplayed {
+    background-color: var(--bad); 
+}
+
+.played {
+    background-color: var(--good);
+}
+
+.completed {
+    background-color: var(--excellent);   
+}
+
+#submit{
+    margin-top: 2rem;
+    padding: 1rem;
+    border-radius: 1.5rem;
+    border: solid black;
+    background-color: var(--color1);
+    color: white;
+    width: 60%;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.game{
+    display: flex;
+    flex-direction: column;
+    gap: 15%;
+
+    background-image: url(img/sport.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    align-items: center;
+    justify-content: space-evenly;
+
+    border-radius: 1rem;
+    border: none;
+
+    width: fit-content;
+    height: 40vh;
+    margin: 2rem;
+
+}
+
+.game > h3{
+    color: white;
+    font-size: 2rem;
+    padding-left: 1rem;
+}
+
+.game > span{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    color: white;
+}
